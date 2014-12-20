@@ -3,7 +3,8 @@ clueless-play
 
 Clueless Server Implementation using Play Framework in Scala.
 
-This application is to allow one or more players play a game of Clueless, which is like Clue,
+This application is thee server which allows one or more players to play a 
+game of Clueless, which is like Clue,
 but with simplified movement. This code establishes the RESTful server for
 maintaing the state of games and handling move instructions.
 
@@ -13,14 +14,14 @@ Instructions
 ### Test the app
 
 1. Checkout the source from github
-2. Run 'activator test' from a command prompt in the checkout directory
+2. Run `activator test` from a command prompt in the checkout directory
 
 
 ### Run the App
 
 1. Checkout the source from github
-2. Run 'activator run' from a command prompt in the checkout directory
-3. Navigate to http://localhost:9000
+2. Run `activator run` from a command prompt in the checkout directory
+3. Navigate to [http://localhost:9000]
 
 Project Status
 --------------
@@ -28,6 +29,7 @@ Project Status
 ### Completed
 
 * Grabbed play template and setup in github
+* Started game logic and case classes
 
 ### Todo
 
@@ -40,6 +42,7 @@ Project Status
 * Index web page with instructions and link to client
 * Web GUI client
 * AI players
+* Watch AI-only game
 
 
 Development Tools
@@ -49,5 +52,6 @@ Development Tools
 * [Scala IDE](http://scala-ide.org/) (Eclipse Luna)
 * [Typesafe Activator](http://typesafe.com/)
 * [Play Framework](https://www.playframework.com)
+* [Akka Framework](http://akka.io/)
 * [Github](https://github.com/Mixolyde/clueless-play)
 * [EGit](https://eclipse.github.io/) Git plugin for Eclipse
