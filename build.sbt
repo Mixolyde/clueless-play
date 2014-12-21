@@ -12,3 +12,6 @@ libraryDependencies ++= Seq(
   cache,
   ws
 )
+
+//enable compiler feature warnings
+scalacOptions ++= Seq("-feature")

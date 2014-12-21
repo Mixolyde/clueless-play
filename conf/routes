@@ -13,7 +13,8 @@ GET     /games                      controllers.GameResources.index
 POST    /games                      controllers.GameResources.newGame
 GET     /games/:id                  controllers.GameResources.gameData(id: Int)
 DELETE  /games/:id                  controllers.GameResources.deleteGame(id: Int)
-GET     /games/:id/move             controllers.GameResources.getMoves(id: Int)
-PUT     /games/:id/move             controllers.GameResources.submitMove(id: Int)
 PUT     /games/:id/player           controllers.GameResources.submitPlayer(id: Int)
 PUT     /games/:id/start            controllers.GameResources.submitStart(id: Int)
+
+GET     /games/:id/move             controllers.MoveResources.getMoves(id: Int)
+PUT     /games/:id/move             controllers.MoveResources.submitMove(id: Int)
