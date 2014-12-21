@@ -1,0 +1,13 @@
+@* gamelist Template File *@
+@(message: String, games: List[Int])
+
+@main("Clueless Game Server List") {
+	
+<h1>@message</h1>
+<ul>
+@for(game <- games) {
+  <li>id: @game</li>
+}
+</ul>
+
+}
