@@ -55,3 +55,4 @@ Development Tools
 * [Akka Framework](http://akka.io/)
 * [Github](https://github.com/Mixolyde/clueless-play)
 * [EGit](https://eclipse.github.io/) Git plugin for Eclipse
+* [Jenkins](http://jenkins-ci.org) CI build server
