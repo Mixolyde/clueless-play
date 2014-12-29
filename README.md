@@ -55,3 +55,12 @@ Development Tools
 * [Akka Framework](http://akka.io/)
 * [Github](https://github.com/Mixolyde/clueless-play)
 * [EGit](https://eclipse.github.io/) Git plugin for Eclipse
+* [Jenkins](http://jenkins-ci.org) CI build server
+
+Continuous Integration
+----------------------
+
+Current build server can be found at [Jenkins](http://ec2-54-172-180-224.compute-1.amazonaws.com:8080/jenkins). 
+There is currently one job running:
+
+* Clueless Server Build Test - runs unit tests and creates distribution .zip file.
