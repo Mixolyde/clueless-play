@@ -18,3 +18,5 @@ PUT     /games/:id/start            controllers.GameResources.submitStart(id: In
 
 GET     /games/:id/move             controllers.MoveResources.getMoves(id: Int)
 PUT     /games/:id/move             controllers.MoveResources.submitMove(id: Int)
+
+GET     /games/:id/view             controllers.ViewResources.viewGame(id: Int)

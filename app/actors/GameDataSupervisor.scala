@@ -19,10 +19,25 @@ class GameDataSupervisor extends Actor {
   def receive = {
     case NewGame          => {
       log.info("Received new game message")
+      //update the game index
       gameIndex += 1
-      val child = context.actorOf(Props[GameDataActor])
+      
+      val child = context.actorOf(GameDataActor.props(gameIndex))
       gameActors += (gameIndex -> child)
       
+    }
+    
+    case GetGameData(id: Int) => {
+      log.info("Received get game data message")
+      
+      //forward the message to the right actor
+      gameActors(id) forward GetGameData(id)
+    }
+    
+    case ListGames => {
+      val ids: Set[Int] = gameActors.keySet.toSet[Int]
+      
+      sender() ! GameList(ids)
     }
     
     case StartGame(id: Int)        => {
@@ -52,12 +67,15 @@ class GameDataSupervisor extends Actor {
 
 object GameDataSupervisor {
   def props(): Props = Props(new GameDataSupervisor())
-
+  
   //receive messages
   case object NewGame
   case object ListGames
   
   case class StartGame(id: Int)
-  case class GameData(id: Int)
+  case class GetGameData(id: Int)
   case class EndGame(id: Int)
+  
+  //response messages
+  case class GameList(ids: Set[Int])
 }

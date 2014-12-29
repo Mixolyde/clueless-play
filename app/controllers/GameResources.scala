@@ -12,6 +12,8 @@ import scala.concurrent.duration._
 import actors.GameDataSupervisor
 import actors.GameDataSupervisor._
 
+case class ViewGameFormData(gameId: Int)
+
 object GameResources extends Controller {
   val log = Logger(this.getClass())
   implicit val timeout = Timeout(5.seconds)
