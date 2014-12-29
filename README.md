@@ -48,14 +48,16 @@ Project Status
 Development Tools
 -----------------
 
-* [Scala](http://www.scala-lang.org/)
-* [Scala IDE](http://scala-ide.org/) (Eclipse Luna)
-* [Typesafe Activator](http://typesafe.com/)
-* [Play Framework](https://www.playframework.com)
-* [Akka Framework](http://akka.io/)
-* [Github](https://github.com/Mixolyde/clueless-play)
+* [Scala](http://www.scala-lang.org/) Amazing functional/OO general purpose programming language
+* [Scala IDE](http://scala-ide.org/) (Eclipse Luna) Eclipse-based IDE for Scala
+* [Play Framework](https://www.playframework.com) Web application and REST service framework
+* [Akka Framework](http://akka.io/) Actor-based concurrency framework
+* [SBT] (http://www.scala-sbt.org/) Interactive, simple build tool for running, testing, and deploying Scala projects
+* [Typesafe Activator](http://typesafe.com/) Scala, AKKA, Play, and SBT all rolled into one awesome package
+* [Github](https://github.com/Mixolyde/clueless-play) GIT version control repository
 * [EGit](https://eclipse.github.io/) Git plugin for Eclipse
 * [Jenkins](http://jenkins-ci.org) CI build server
+* [Postman](http://www.getpostman.com/) Easy and powerful REST API testing toolkit
 
 Continuous Integration
 ----------------------
