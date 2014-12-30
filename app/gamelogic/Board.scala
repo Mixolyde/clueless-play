@@ -6,7 +6,6 @@ case class Hallway(room1: Room, room2: Room) extends BoardLocation
 case class Passage(room1: Room, room2: Room)
 
 object Board {
-  import gamelogic._
 
   private val PASSAGES_ONE: Set[Passage] = Set(Passage(STUDY, KITCHEN), Passage(CONSERVATORY, LOUNGE))
   val PASSAGES = PASSAGES_ONE ++ PASSAGES_ONE map ((passage) => Passage(passage.room2, passage.room1))
