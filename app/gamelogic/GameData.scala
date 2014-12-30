@@ -1,6 +1,7 @@
 package gamelogic
 
 import gamelogic._
+import scala.util.Random
 
 class GameData {
   var players: Set[PlayerCharacter] = Set()
@@ -18,6 +19,7 @@ class GameData {
     //TODO add player info to players set
     val charsInUse: Set[Character] = players collect { case pc => pc.character }
     val charsAvailable = Board.START_ORDER filterNot { case char => charsInUse contains char}
+    val randomChar = charsAvailable(Random.nextInt(charsAvailable length))
 
   }
   
