@@ -25,6 +25,13 @@ class GameDataSupervisor extends Actor {
       val child = context.actorOf(GameDataActor.props(gameIndex))
       gameActors += (gameIndex -> child)
       
+      sender ! gameIndex
+      
+    }
+    
+    case NewPlayer(id: Int, name: String) => {
+      //forward the message to the right actor
+      gameActors(id) forward NewPlayer(id, name)
     }
     
     case GetGameData(id: Int) => {
@@ -42,6 +49,9 @@ class GameDataSupervisor extends Actor {
     
     case StartGame(id: Int)        => {
       log.info("Received game start message for game: " + id)
+      
+      //forward the message to the right actor
+      gameActors(id) forward StartGame(id)
       
     }
     
@@ -75,6 +85,7 @@ object GameDataSupervisor {
   case class StartGame(id: Int)
   case class GetGameData(id: Int)
   case class EndGame(id: Int)
+  case class NewPlayer(id: Int, name: String)
   
   //response messages
   case class GameList(ids: Set[Int])
