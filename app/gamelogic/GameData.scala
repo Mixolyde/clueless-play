@@ -13,8 +13,12 @@ class GameData {
   //TODO randomize winning combo
   val winningCards = WinningCards(HALL, KNIFE, PLUM)
   
-  def addPlayer(newPlayer: PlayerCharacter) = {
+  def addPlayer(newPlayer: String) = {
+    //TODO randomly determine character
     //TODO add player info to players set
+    val charsInUse: Set[Character] = players collect { case pc => pc.character }
+    val charsAvailable = Board.START_ORDER filterNot { case char => charsInUse contains char}
+
   }
   
   def startGame() = {
