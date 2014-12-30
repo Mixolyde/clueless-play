@@ -19,7 +19,7 @@ class BoardSpec extends Specification {
       
     }
     "Scarlet starts in the hall/lounge hallway" in {
-      Board.getStart(SCARLET) mustEqual Right(Hallway(HALL, LOUNGE))
+      Board.getStart(SCARLET) mustEqual Hallway(HALL, LOUNGE)
     }
   }
 
