@@ -1,10 +1,7 @@
 package gamelogic
 
-package object gamelogic {
-  type BoardLocation = Either[Room, Hallway]
-}
-
-case class Hallway(room1: Room, room2: Room)
+abstract class BoardLocation
+case class Hallway(room1: Room, room2: Room) extends BoardLocation
 
 case class Passage(room1: Room, room2: Room)
 
@@ -44,6 +41,6 @@ object Board {
     (PLUM, Hallway(STUDY, LIBRARY)))
 
   def getStart(character: Character):BoardLocation = {
-    Right(STARTS(character))
+    STARTS(character)
   }
 }
