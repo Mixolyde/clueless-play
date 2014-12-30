@@ -1,7 +1,7 @@
 package gamelogic
 
-abstract class BoardLocation
-case class Hallway(room1: Room, room2: Room) extends BoardLocation
+trait BoardLocation
+case class Hallway(room1: Room, room2: Room) with BoardLocation
 
 case class Passage(room1: Room, room2: Room)
 
