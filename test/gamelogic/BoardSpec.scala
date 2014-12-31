@@ -18,7 +18,11 @@ class BoardSpec extends Specification {
       Board.HALLWAYS must contain (Hallway(STUDY, HALL), Hallway(HALL, STUDY))
       
     }
+<<<<<<< HEAD
     "have Scarlet start in the hall/lounge hallway" in {
+=======
+    "Scarlet starts in the hall/lounge hallway" in {
+>>>>>>> branch 'master' of git@github.com:Mixolyde/clueless-play.git
       Board.getStart(SCARLET) mustEqual Hallway(HALL, LOUNGE)
     }
   }
