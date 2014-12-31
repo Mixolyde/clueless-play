@@ -17,6 +17,7 @@ class GameData {
   def addPlayer(newPlayer: String) = {
     println("Received request for new player: " + newPlayer)
     val charsInUse: Set[Character] = players collect { case pc => pc.character }
+     println("charsInUse: " + charsInUse)
     val charsAvailable = Board.START_ORDER filterNot { case char => charsInUse contains char}
     println("charsAvailable: " + charsAvailable)
     if (charsAvailable.length > 0) {
