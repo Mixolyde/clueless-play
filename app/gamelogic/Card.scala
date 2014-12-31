@@ -1,30 +1,30 @@
 package gamelogic
 
 sealed abstract class Card 
-sealed case class Room() extends Card with BoardLocation
-sealed case class Weapon() extends Card
-sealed case class Character() extends Card
+sealed class Room() extends Card with BoardLocation
+sealed class Weapon() extends Card
+sealed class Character() extends Card
 
-object GREEN   extends Character()
-object PLUM    extends Character()
-object WHITE   extends Character()
-object MUSTARD extends Character()
-object SCARLET extends Character()
-object PEACOCK extends Character()
+case object GREEN   extends Character()
+case object PLUM    extends Character()
+case object WHITE   extends Character()
+case object MUSTARD extends Character()
+case object SCARLET extends Character()
+case object PEACOCK extends Character()
 
-object KNIFE       extends Weapon()
-object CANDLESTICK extends Weapon()
-object PIPE        extends Weapon()
-object PISTOL      extends Weapon()
-object ROPE        extends Weapon()
-object POISON      extends Weapon()
+case object KNIFE       extends Weapon()
+case object CANDLESTICK extends Weapon()
+case object PIPE        extends Weapon()
+case object PISTOL      extends Weapon()
+case object ROPE        extends Weapon()
+case object POISON      extends Weapon()
 
-object HALL          extends Room()
-object STUDY         extends Room()
-object LIBRARY       extends Room()
-object CONSERVATORY  extends Room()
-object BALL_ROOM     extends Room()
-object BILLIARD_ROOM extends Room()
-object LOUNGE        extends Room()
-object DINING_ROOM   extends Room()
-object KITCHEN       extends Room()
+case object HALL          extends Room()
+case object STUDY         extends Room()
+case object LIBRARY       extends Room()
+case object CONSERVATORY  extends Room()
+case object BALL_ROOM     extends Room()
+case object BILLIARD_ROOM extends Room()
+case object LOUNGE        extends Room()
+case object DINING_ROOM   extends Room()
+case object KITCHEN       extends Room()

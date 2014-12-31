@@ -8,7 +8,7 @@ case class Passage(room1: Room, room2: Room)
 object Board {
 
   private val PASSAGES_ONE: Set[Passage] = Set(Passage(STUDY, KITCHEN), Passage(CONSERVATORY, LOUNGE))
-  val PASSAGES = PASSAGES_ONE ++ PASSAGES_ONE map ((passage) => Passage(passage.room2, passage.room1))
+  val PASSAGES = PASSAGES_ONE ++ PASSAGES_ONE.map ((passage) => Passage(passage.room2, passage.room1))
 
   private val HALLWAYS_ONE: Set[Hallway] = Set(
     Hallway(STUDY, HALL),

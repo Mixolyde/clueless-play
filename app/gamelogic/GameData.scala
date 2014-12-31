@@ -15,11 +15,11 @@ class GameData {
   val winningCards = WinningCards(HALL, KNIFE, PLUM)
   
   def addPlayer(newPlayer: String) = {
-    println("Received request for new player: " + newPlayer)
+    //println("Received request for new player: " + newPlayer)
     val charsInUse: Set[Character] = players collect { case pc => pc.character }
-     println("charsInUse: " + charsInUse)
+    //println("charsInUse: " + charsInUse)
     val charsAvailable = Board.START_ORDER filterNot { case char => charsInUse contains char}
-    println("charsAvailable: " + charsAvailable)
+    //println("charsAvailable: " + charsAvailable)
     if (charsAvailable.length > 0) {
       val randomChar = charsAvailable(Random.nextInt(charsAvailable.length))
       // create a new player record with an empty hand

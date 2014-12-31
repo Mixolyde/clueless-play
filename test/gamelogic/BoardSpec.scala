@@ -10,12 +10,14 @@ import play.api.test.Helpers._
 class BoardSpec extends Specification {
   "Board static helpers" should {
     "contain both directions in passages" in {
-      Board.PASSAGES must contain (Passage(STUDY, KITCHEN), Passage(KITCHEN, STUDY))
+      Board.PASSAGES must contain (Passage(STUDY, KITCHEN))
+      Board.PASSAGES must contain (Passage(KITCHEN, STUDY))
       
     }
     
     "contain both directions in hallways" in {
-      Board.HALLWAYS must contain (Hallway(STUDY, HALL), Hallway(HALL, STUDY))
+      Board.HALLWAYS must contain (Hallway(STUDY, HALL))
+      Board.HALLWAYS must contain (Hallway(HALL, STUDY))
       
     }
     "have Scarlet start in the hall/lounge hallway" in {
