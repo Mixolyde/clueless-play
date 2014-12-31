@@ -21,7 +21,9 @@ class GameDataSpec extends Specification {
   "Game data when adding players" should {
     val testData = new GameData()
     "allow only six players" in {
-      (1 to 6).foreach(x => testData.addPlayer("newPlayer" + x))
+      for(x <- 1 to 6)
+        testData.addPlayer("newPlayer" + x)
+        
       testData.players must haveLength(6)
       
       testData.addPlayer("too many players")
