@@ -3,10 +3,11 @@ clueless-play
 
 Clueless Server Implementation using Play Framework in Scala.
 
-This application is thee server which allows one or more players to play a 
-game of Clueless, which is like Clue,
-but with simplified movement. This code establishes the RESTful server for
-maintaing the state of games and handling move instructions.
+This application is the server which allows one or more players to play a 
+game of Clue-less, which is like Clue,
+but with simplified board movement. This code establishes the RESTful server for
+maintaining the state of games and handling move instructions. Eventually will
+provide a web interface for viewing and playing the game.
 
 Instructions
 ------------
@@ -30,12 +31,18 @@ Project Status
 
 * Grabbed play template and setup in github
 * Started game logic and case classes
+* Started game logic handling actors
+** Game Data Actor holds the mutable state of a single game instance
+** Game Data Supervisor maintains list of active game actors
+and manages communication with them
 
 ### Todo
 
-* Game Logic (cards, game data, players, move logic)
-* Store game in server
+* Lots of unit tests
+* Game Logic (game data, players, move logic)
+* Server game state CRUD via messages
 * Send game data as JSON object
+* Receive player info and start game
 * Receive move submissions
 * Update state on move submission
 * Send out game over messages?
@@ -43,7 +50,7 @@ Project Status
 * Web GUI client
 * AI players
 * Watch AI-only game
-
+* Auto-refreshing game viewer
 
 Development Tools
 -----------------
@@ -54,6 +61,7 @@ Development Tools
 * [Akka Framework](http://akka.io/) Actor-based concurrency framework
 * [SBT] (http://www.scala-sbt.org/) Interactive, simple build tool for running, testing, and deploying Scala projects
 * [Typesafe Activator](http://typesafe.com/) Scala, AKKA, Play, and SBT all rolled into one awesome package
+* [Specs2](https://etorreborre.github.io/specs2) Unit/Integration test framework for Scala
 * [Github](https://github.com/Mixolyde/clueless-play) GIT version control repository
 * [EGit](https://eclipse.github.io/) Git plugin for Eclipse
 * [Jenkins](http://jenkins-ci.org) CI build server
@@ -62,7 +70,8 @@ Development Tools
 Continuous Integration
 ----------------------
 
-Current build server can be found at [Jenkins](http://ec2-54-172-180-224.compute-1.amazonaws.com:8080/jenkins). 
+The current [Jenkins](http://jenkins-ci.org) build server can be found 
+[here](http://ec2-54-172-180-224.compute-1.amazonaws.com:8080/jenkins). 
 There is currently one job running:
 
 * Clueless Server Build Test - runs unit tests and creates distribution .zip file.
