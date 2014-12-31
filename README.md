@@ -74,5 +74,5 @@ The current [Jenkins](http://jenkins-ci.org) build server can be found
 There is currently one job running:
 
 * Clueless Server Build Test - runs unit tests and creates distribution .zip file.
-* 
+
 [![Build Status](http://ec2-54-172-180-224.compute-1.amazonaws.com:8080/jenkins/job/Clueless_Server_Play_Test/badge/icon)](http://ec2-54-172-180-224.compute-1.amazonaws.com:8080/jenkins/job/Clueless_Server_Play_Test/)
