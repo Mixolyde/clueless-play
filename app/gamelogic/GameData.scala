@@ -15,11 +15,13 @@ class GameData {
   val winningCards = WinningCards(HALL, KNIFE, PLUM)
   
   def addPlayer(newPlayer: String) = {
-    //TODO randomly determine character
-    //TODO add player info to players set
     val charsInUse: Set[Character] = players collect { case pc => pc.character }
     val charsAvailable = Board.START_ORDER filterNot { case char => charsInUse contains char}
-    val randomChar = charsAvailable(Random.nextInt(charsAvailable.length))
+    if (charsAvailable.length > 0) {
+      val randomChar = charsAvailable(Random.nextInt(charsAvailable.length))
+      // create a new player record with an empty hand
+      players += PlayerCharacter(newPlayer, randomChar, None)
+    }
 
   }
   
@@ -38,7 +40,7 @@ case class WinningCards(room: Room, weapon: Weapon, character: Character)
 case class PlayerCharacter(
     val name:String, 
     val character:Character,
-    val hand:Set[Card])
+    val hand:Option[Set[Card]])
     
 sealed abstract class MoveType
 case object Move extends MoveType
