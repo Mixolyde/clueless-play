@@ -31,9 +31,9 @@ Project Status
 
 * Grabbed play template and setup in github
 * Started game logic and case classes
-* Started game logic handling actors:
-    Game Data Actor holds the mutable state of a single game instance
-    Game Data Supervisor maintains list of active game actors and manages communication with them
+* Started game logic handling actors. The Game Data Actor holds the 
+  mutable state of a single game instance. The Game Data Supervisor 
+  maintains list of active game actors and manages communication with them.
 
 ### Todo
 
