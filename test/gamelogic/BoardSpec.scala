@@ -8,18 +8,18 @@ import play.api.test.Helpers._
 
 @RunWith(classOf[JUnitRunner])
 class BoardSpec extends Specification {
-  "Board" should {
-    "Passage list contains both directions" in {
+  "Board static helpers" should {
+    "contain both directions in passages" in {
       Board.PASSAGES must contain (Passage(STUDY, KITCHEN), Passage(KITCHEN, STUDY))
       
     }
     
-    "Hallway list contains both directions" in {
+    "contain both directions in hallways" in {
       Board.HALLWAYS must contain (Hallway(STUDY, HALL), Hallway(HALL, STUDY))
       
     }
-    "Scarlet starts in the hall/lounge hallway" in {
-      Board.getStart(SCARLET) mustEqual Right(Hallway(HALL, LOUNGE))
+    "have Scarlet start in the hall/lounge hallway" in {
+      Board.getStart(SCARLET) mustEqual Hallway(HALL, LOUNGE)
     }
   }
 

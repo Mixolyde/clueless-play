@@ -1,7 +1,7 @@
 package gamelogic
 
 sealed abstract class Card 
-sealed case class Room() extends Card
+sealed case class Room() extends Card with BoardLocation
 sealed case class Weapon() extends Card
 sealed case class Character() extends Card
 
