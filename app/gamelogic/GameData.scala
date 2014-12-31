@@ -21,6 +21,7 @@ class GameData {
       val randomChar = charsAvailable(Random.nextInt(charsAvailable.length))
       // create a new player record with an empty hand
       players += PlayerCharacter(newPlayer, randomChar, None)
+      println(players)
     }
 
   }
