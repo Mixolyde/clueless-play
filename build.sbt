@@ -13,5 +13,10 @@ libraryDependencies ++= Seq(
   ws
 )
 
+//local app dependencies
+libraryDependencies ++= Seq(
+  "com.typesafe.akka" %% "akka-testkit" % "2.3.4"
+)
+
 //enable compiler feature warnings
 scalacOptions ++= Seq("-feature")
