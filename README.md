@@ -1,12 +1,12 @@
 clueless-play
 =============
 
-Clueless Server Implementation using Play Framework in Scala.
+A Clue-less server implementation using the Play Framework in Scala.
 
 This application is the server which allows one or more players to play a 
 game of Clue-less, which is like Clue,
 but with simplified board movement. This code establishes the RESTful server for
-maintaining the state of games and handling move instructions. Eventually will
+maintaining the state of games and handling move instructions. Eventually it will
 provide a web interface for viewing and playing the game.
 
 Instructions
@@ -30,7 +30,7 @@ Project Status
 ### Completed
 
 * Grabbed play template and setup in github
-* Started game logic and case classes
+* Started game logic and case classes for game objects
 * Started game logic handling actors. The `GameDataActor` holds the 
   mutable state of a single game instance. The `GameDataSupervisor` 
   maintains list of active game actors and manages communication with them.
@@ -51,6 +51,7 @@ Project Status
 * AI players
 * Watch AI-only game
 * Auto-refreshing game viewer
+* More jenkins jobs for deploying the server and running application tests
 
 Development Tools
 -----------------
@@ -70,7 +71,7 @@ Development Tools
 Continuous Integration
 ----------------------
 
-The current [Jenkins](http://jenkins-ci.org) build server can be found 
+The project's [Jenkins](http://jenkins-ci.org) build server can be found 
 [here](http://ec2-54-172-180-224.compute-1.amazonaws.com:8080/jenkins). 
 There is currently one job running:
 
