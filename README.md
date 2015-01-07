@@ -39,12 +39,13 @@ Project Status
 
 * Lots of unit tests
 * Game Logic (game data, players, move logic)
+* Move/game history log which stores/logs all moves played
 * Server game state CRUD via messages
 * Send game data as JSON object
 * Receive player info and start game
 * Receive move submissions
 * Update state on move submission
-* Send out game over messages?
+* Possibly send out a "game over" message directly to clients
 * Index web page with instructions and link to client
 * Web GUI client
 * AI players
@@ -58,7 +59,7 @@ Development Tools
 * [Scala IDE](http://scala-ide.org/) (Eclipse Luna) Eclipse-based IDE for Scala
 * [Play Framework](https://www.playframework.com) Web application and REST service framework
 * [Akka Framework](http://akka.io/) Actor-based concurrency framework
-* [SBT] (http://www.scala-sbt.org/) Interactive, simple build tool for running, testing, and deploying Scala projects
+* [SBT](http://www.scala-sbt.org/) Interactive, simple build tool for running, testing, and deploying Scala projects
 * [Typesafe Activator](http://typesafe.com/) Scala, AKKA, Play, and SBT all rolled into one awesome package
 * [Specs2](https://etorreborre.github.io/specs2) Unit/Integration test framework for Scala
 * [Github](https://github.com/Mixolyde/clueless-play) GIT version control repository
