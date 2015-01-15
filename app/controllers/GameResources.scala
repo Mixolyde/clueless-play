@@ -14,8 +14,6 @@ import scala.concurrent.Await
 import actors.GameDataSupervisor
 import actors.GameDataSupervisor._
 
-case class ViewGameFormData(gameId: Int)
-
 object GameResources extends Controller {
   val log = Logger(this.getClass())
   implicit val timeout = Timeout(5.seconds)
@@ -40,7 +38,7 @@ object GameResources extends Controller {
       "winner":"mustard"}
       """)
 
-    Ok(views.html.gamedata("Game Data for: " + id, Json.prettyPrint(json) ))
+    Ok(Json.prettyPrint(json)).as(ContentTypes.JSON)
   }
   
   def newGame = Action {
@@ -50,7 +48,7 @@ object GameResources extends Controller {
     val id = Await.result(future, 1.second)
     
     //return index action after handling the POST
-    Redirect("/games/" + id)
+    Redirect("/games/" + id + "/view")
   }
   
   def submitPlayer(id: Int) = TODO
@@ -61,8 +59,7 @@ object GameResources extends Controller {
     log.info("Ending game with id: " + id)
     // look up game data supervisor actor
     Akka.system.actorSelection("/user/GameDataSupervisor") ! EndGame(id)
-    //TODO redirect to games list index page?
-    Ok("End Game message sent")
+    Redirect("/games")
 
   }
 

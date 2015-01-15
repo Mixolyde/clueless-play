@@ -1,0 +1,24 @@
+@* gamedata Template File *@
+
+@(message: String, gameJson: String, autoRefreshEnabled:Boolean)
+
+@main("Clueless Game Data Display") {
+	
+<h1>@message</h1>
+
+@if(autoRefreshEnabled) {
+  <a href="?autorefresh=false">Disable Auto Refresh</a>
+
+} else {
+  <a href="?autorefresh=true">Enable Auto Refresh</a>
+}
+
+@* TODO automatically refresh and update JSON printout *@
+
+<pre>
+@gameJson
+</pre>
+
+<a href="/games">Game List</a>
+
+}
