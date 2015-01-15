@@ -12,6 +12,7 @@ class GameDataActor(val gameId:Int) extends Actor {
   def receive = {
     case EndGame(id: Int) => {
       log.info("Received end game message.")
+      context.stop(self)
     }
     case _ => log.info("Unrecognized message received.")
   }

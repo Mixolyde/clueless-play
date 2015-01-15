@@ -1,5 +1,9 @@
 @* gamelist Template File *@
-@(message: String, games: List[Int])
+@import actors.GameDataSupervisor._
+
+@(message: String, gameList: GameList)
+
+
 
 
 @main("Clueless Game Server List") {
@@ -8,7 +12,7 @@
 
 
 <ul>
-@for(game <- games) {
+@for(game <- gameList.ids) {
   <li>id: @game</li>
 }
 </ul>

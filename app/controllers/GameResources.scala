@@ -2,6 +2,7 @@ package controllers
 
 import akka.util.Timeout
 import akka.pattern.ask
+import play.api.http.ContentTypes
 import play.api.mvc.Controller
 import play.api.mvc.Action
 import play.api.libs.json._
@@ -9,6 +10,7 @@ import play.api.Logger
 import play.api.libs.concurrent.Akka
 import play.api.Play.current
 import scala.concurrent.duration._
+import scala.concurrent.Await
 import actors.GameDataSupervisor
 import actors.GameDataSupervisor._
 
@@ -19,9 +21,8 @@ object GameResources extends Controller {
   implicit val timeout = Timeout(5.seconds)
 
   def index = Action {
-    val ids = List()
-    
-    ask(Akka.system.actorSelection("/user/GameDataSupervisor"), ListGames)
+    val future = ask(Akka.system.actorSelection("/user/GameDataSupervisor"), ListGames).mapTo[GameList]
+    val ids = Await.result(future, 1.second)
     
     Ok(views.html.gamelist("Games List Page", ids))
   }
@@ -39,16 +40,17 @@ object GameResources extends Controller {
       "winner":"mustard"}
       """)
 
-    Ok(json)
+    Ok(views.html.gamedata("Game Data for: " + id, Json.prettyPrint(json) ))
   }
   
   def newGame = Action {
     log.info("Creating new game.")
     // look up game data supervisor actor
-    Akka.system.actorSelection("/user/GameDataSupervisor") ! NewGame
+    val future = ask(Akka.system.actorSelection("/user/GameDataSupervisor"), NewGame).mapTo[Int]
+    val id = Await.result(future, 1.second)
     
-    //TODO redirect to games list index page?
-    Ok("New Game message sent")
+    //return index action after handling the POST
+    Redirect("/games/" + id)
   }
   
   def submitPlayer(id: Int) = TODO
