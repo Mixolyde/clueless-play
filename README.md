@@ -34,6 +34,7 @@ Project Status
 * Started game logic handling actors. The `GameDataActor` holds the 
   mutable state of a single game instance. The `GameDataSupervisor` 
   maintains list of active game actors and manages communication with them.
+* Basic resource pages for listing games
 
 ### Todo
 
